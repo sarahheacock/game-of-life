@@ -4,7 +4,7 @@ function generator() {
   this.num = Math.round(Math.random() * 1);
 }
 
-const startSize = 20;
+const startSize = 10;
 const startObj = [...new Array(startSize)].map((obj, row) => (
   [...new Array(startSize)].map((cell, column) => (
     {
@@ -29,7 +29,8 @@ export default function Cell(state={cells:startObj, size:startSize, generation:0
       //console.log(state["cells"][1][3]["status"]);
       return {
         ...state,
-        cells: [...modify]
+        cells: [...modify],
+        permission: false
       }
     }
 
@@ -83,14 +84,14 @@ export default function Cell(state={cells:startObj, size:startSize, generation:0
           for(let j = 0; j < 8; j++){
             let n = possibleNeighbors[j];
             //avoid top and bottom
-            while(n < 0 || n >= s*s){
-              if(n >= s*s){
-                n = n % (s);
-              }
-              else if(n < 0){
-                n = Math.floor((n * -1) + (s*s));
-              }
-            }
+            // while(n < 0 || n >= s*s){
+            //   if(n >= s*s){
+            //     n = n % (s);
+            //   }
+            //   else if(n < 0){
+            //     n = Math.floor((n * -1) + (s*s));
+            //   }
+            // }
 
 
             if(n >= 0 && n < s*s){

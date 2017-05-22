@@ -23,6 +23,11 @@ body {
 }
 
 .head{
-  color: DimGray;
+  color: DarkSlateGray;
   font-family: serif;
+  font-size: 500%;
+}
+
+.cell{
+  width:1px;
 }
